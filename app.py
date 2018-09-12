@@ -22,6 +22,7 @@ def login():
         password = form["password"]
         user_found = User.objects(username = username, password = password)
         print(type(user_found))
+
         if user_found:
             session["logged_in"] = True
             accepted_user = User.objects.get(username = username, password = password)
@@ -52,4 +53,5 @@ def register():
         return redirect(url_for("login"))
 
 if __name__ == '__main__':
-  app.run(debug=True)
+  # app.run(debug=True)
+  app.run(debug=False)
