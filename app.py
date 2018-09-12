@@ -24,10 +24,11 @@ def login():
         print(type(user_found))
         if user_found:
             session["logged_in"] = True
-            for accepted_user in user_found:
-                session["accepted_user"] = str(accepted_user.id)
-                session["username"] = str(accepted_user.username)
-                return redirect(url_for("index"))
+            accepted_user = User.objects.get(username = username, password = password)
+            # for accepted_user in user_found:
+            session["accepted_user"] = str(accepted_user.id)
+            session["username"] = str(accepted_user.username)
+            return redirect(url_for("index"))
         else:
             return redirect(url_for("login"))
 
