@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>game menu</title>
+  </head>
+  <body>
+    <h1>Demo game</h1>
+    {% if session["logged_in"] == True %}
+      <h2>xin chao: {{session["username"]}}</h2>
+      <a href="{{url_for("logout")}}">log out</a>
+    {% else %}
+      <a href="{{url_for("register")}}",method="get">register</a>
+      <br>
+      <a href="{{url_for("login")}}",method='get'>log in</a>
+    {% endif%}
+  </body>
+</html>
