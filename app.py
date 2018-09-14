@@ -35,7 +35,7 @@ def login():
 
 @app.route("/demo")
 def demo():
-	print('click')
+    return 'click';
 
 @app.route("/logout")
 def logout():
