@@ -8,6 +8,7 @@
     <h1>DemoGame XXXXX</h1>
     {% if session["logged_in"] == True %}
       <h2>xin chao: {{session["username"]}}</h2>
+      <a href="{{url_for("logout")}}">log out 2</a>
       <a href="{{url_for("logout")}}">log out</a>
     {% else %}
       <a href="{{url_for("register")}}",method="get">register</a>
