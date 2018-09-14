@@ -33,9 +33,11 @@ def login():
         else:
             return redirect(url_for("login"))
 
-@app.route("/logout")
+@app.route("/demo")
 def demo():
 	print('click')
+
+@app.route("/logout")
 def logout():
     session["logged_in"] = False
     session.clear()
